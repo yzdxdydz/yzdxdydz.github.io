@@ -1,15 +1,21 @@
 exclude: [README.md]
 title: Yurii Zakharian
 email: yuri-zakharyan@gmail.com
+github: yzdxdydz
+linkedin: yurii-zakharian
+scholar_id: silHCQHr_UoC
 description: >- # this means to ignore newlines until "baseurl:"
   To be description
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yzdxdydz.github.io" # the base hostname & protocol for your site
-github_username:  yzdxdydz
-github: yzdxdydz
+baseurl: "" 
+url: "https://yzdxdydz.github.io" 
+
+
+
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+markdown: kramdown
 
 
