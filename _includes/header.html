@@ -14,15 +14,22 @@
       </a>
 
       <div class="trigger">
-        {% assign sorted_pages = site.pages | sort:"order" %}
-        {% for page in sorted_pages %}
+      {% assign sorted_pages = site.pages | sort: 'title' %}
+      {% assign math_pages = sorted_pages | where_exp: "page", "page.tags contains 'math'" %}
+      {% assign personal_pages = sorted_pages | where_exp: "page", "page.tags contains 'personal'" %}
+      {% assign sorted_math_pages = math_pages | sort: 'title' %}
+        {% for page in sorted_math_pages %}
           {% if page.menu %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
-<!--        <a href="{{ site.departamental_page }}">
-            <img src="image/UoS.ico" alt="DCS">{{ site.current_department }}
-        </a>-->
+  
+      {% assign sorted_personal_pages = personal_pages | sort: 'title' %}
+        {% for page in sorted_personal_pages %}
+          {% if page.menu %}
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endif %}
+      {% endfor %}
       </div>
     </nav>
 
